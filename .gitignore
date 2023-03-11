@@ -147,3 +147,4 @@ dmypy.json
 http_cache.sqlite
 downloads/
 logs/
+/src/results/
