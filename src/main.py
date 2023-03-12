@@ -98,7 +98,7 @@ def pep(session):
         rows = table.find_all('tr')
         for row in rows:
             abbr = find_tag(row, 'abbr').text[1:]
-            general_status = EXPECTED_STATUS[abbr]
+            general_status = EXPECTED_STATUS.get(abbr, [])
             pep_link = urljoin(MAIN_PEP_URL, find_tag(row, 'a')['href'])
             response = get_response(session, pep_link)
             if response is None:
@@ -122,10 +122,7 @@ def pep(session):
                     status=status,
                     general_status=general_status)
                 )
-            if status in results:
-                results[status] += 1
-            else:
-                results[status] = 1
+            results[status] = results.get(status, 0) + 1
 
     results_table = [('Статус', 'Количество')]
     results_table += list(results.items())
