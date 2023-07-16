@@ -1,4 +1,4 @@
-#Парсер Python.org
+# Парсер Python.org
 
 ## Описание
 
@@ -46,6 +46,7 @@ python parser.py download --clear-cache
 python parser.py pep
 ```
 
-## Авторы
+### Автор проекта:
 
-- Автор: Artemii
+[Artemii Berezin](https://github.com/ThatCoderMan)
+
